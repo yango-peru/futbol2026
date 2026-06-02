@@ -1971,7 +1971,7 @@ function renderThird(){
 
 async function submitQuiniela(){
   // VALIDACIÓN: Check si ya hay una participación con este email o teléfono
-  if(GOOGLE_SHEETS_URL && GOOGLE_SHEETS_URL.indexOf('PEGA_AQUI') === -1){
+  if(GOOGLE_SHEETS_URL && GOOGLE_SHEETS_URL.indexOf('https://script.google.com/macros/s/AKfycby0I3GjBWbjDfr_Upe-1VMcF0W9V73mSwx1mLwiI5x4-PFkDfUvbu6Y83AQEKbtC8vW/exec') === -1){
     try{
       const checkUrl = GOOGLE_SHEETS_URL + '?check=1&email=' + encodeURIComponent(state.user.email) + '&phone=' + encodeURIComponent(state.user.phone);
       const r = await fetch(checkUrl);
@@ -2017,7 +2017,7 @@ async function submitQuiniela(){
   try{await window.storage.set('quiniela:'+code, JSON.stringify(submission), true);}
   catch(e){console.warn('Local storage failed:', e);}
 
-  if(GOOGLE_SHEETS_URL && GOOGLE_SHEETS_URL.indexOf('PEGA_AQUI') === -1){
+  if(GOOGLE_SHEETS_URL && GOOGLE_SHEETS_URL.indexOf('https://script.google.com/macros/s/AKfycby0I3GjBWbjDfr_Upe-1VMcF0W9V73mSwx1mLwiI5x4-PFkDfUvbu6Y83AQEKbtC8vW/exec') === -1){
     try{
       fetch(GOOGLE_SHEETS_URL, {
         method: 'POST',
@@ -2067,7 +2067,7 @@ async function showLeaderboard(){
 
   try{
     // Intentar cargar del Google Sheet (calculado por el admin)
-    if(GOOGLE_SHEETS_URL && GOOGLE_SHEETS_URL.indexOf('PEGA_AQUI') === -1){
+    if(GOOGLE_SHEETS_URL && GOOGLE_SHEETS_URL.indexOf('https://script.google.com/macros/s/AKfycby0I3GjBWbjDfr_Upe-1VMcF0W9V73mSwx1mLwiI5x4-PFkDfUvbu6Y83AQEKbtC8vW/exec') === -1){
       const r = await fetch(GOOGLE_SHEETS_URL + '?action=get_ranking');
       if(r.ok){
         const data = await r.json();
