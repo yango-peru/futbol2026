@@ -2014,7 +2014,7 @@ async function submitQuiniela(){
     score: 0
   };
 
-  try{await window.storage.set('quiniela:'+code, JSON.stringify(submission), true);}
+  try{localStorage.setItem('quiniela:'+code, JSON.stringify(submission));}
   catch(e){console.warn('Local storage failed:', e);}
 
   if(GOOGLE_SHEETS_URL && GOOGLE_SHEETS_URL.indexOf('https://script.google.com/macros/s/AKfycby0I3GjBWbjDfr_Upe-1VMcF0W9V73mSwx1mLwiI5x4-PFkDfUvbu6Y83AQEKbtC8vW/exec') === -1){
